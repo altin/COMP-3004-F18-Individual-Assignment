@@ -109,4 +109,17 @@ public class DeckTest extends TestCase {
 		assertEquals(4, queenCount);
 		assertEquals(4, kingCount);
 	}
+
+	public void testShuffle() {
+		Deck d1 = new Deck();
+		d1.createDeck();
+
+		Deck d2 = new Deck();
+		d2.createDeck();
+		d2.shuffle();
+
+		do {
+			assertFalse(d1.equals(d2));
+		} while (d1.equals(d2));
+	}
 }
