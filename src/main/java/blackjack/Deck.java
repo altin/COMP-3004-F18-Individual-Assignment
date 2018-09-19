@@ -9,7 +9,7 @@ public class Deck {
 	public Deck() {
 		this.deck = new ArrayList<Card>();
 	}
-	
+
 	public void createDeck() {
 		for (Card.Suit suit : Card.Suit.values()) {
 			for (Card.Rank rank : Card.Rank.values()) {
@@ -17,11 +17,11 @@ public class Deck {
 			}
 		}
 	}
-	
+
 	public void shuffle() {
 		Random random = new Random();
 		ArrayList<Card> tempDeck = new ArrayList<Card>();
-		
+
 		int index = 0;
 
 		for (int i = 0; i < this.deck.size(); i++) {
@@ -29,22 +29,22 @@ public class Deck {
 			tempDeck.add(this.deck.get(index));
 			this.deck.remove(index);
 		}
-		
+
 		this.deck = tempDeck;
 	}
-	
+
 	public int getDeckSize() {
 		return this.deck.size();
 	}
-	
+
 	public ArrayList<Card> getDeckArray() {
 		return this.deck;
 	}
-	
+
 	public Card getCardAtIndex(int i) {
 		return this.deck.get(i);
 	}
-	
+
 	public boolean equals(Deck deck2) {
 		if (this.deck.size() != deck2.getDeckSize())
 			return false;
