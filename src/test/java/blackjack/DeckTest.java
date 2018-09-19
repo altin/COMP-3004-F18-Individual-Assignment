@@ -76,7 +76,7 @@ public class DeckTest extends TestCase {
 
 	public void testCreateDeck_SpecialCardCount() {
 		Deck d1 = new Deck();
-		d1.createStandardDeck();
+		d1.createDeck();
 		ArrayList<Card> deck = d1.getDeckArray();
 
 		int aceCount = 0;
