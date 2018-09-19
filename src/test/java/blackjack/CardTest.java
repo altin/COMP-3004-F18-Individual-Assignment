@@ -1,6 +1,5 @@
-package core;
+package blackjack;
 
-import blackjack.Card;
 import blackjack.Card.Rank;
 import blackjack.Card.Suit;
 import junit.framework.TestCase;
