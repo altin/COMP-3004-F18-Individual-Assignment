@@ -49,4 +49,28 @@ public class Card {
 		return this.rank.name();
 	}
 	
+	@Override
+	public String toString() {
+		String rankSymbol = "";
+		
+		switch (this.getRankString()) {
+		case "ACE":
+			rankSymbol = "A";
+			break;
+		case "JACK":
+			rankSymbol = "J";
+			break;
+		case "QUEEN":
+			rankSymbol = "Q";
+			break;
+		case "KING":
+			rankSymbol = "K";
+			break;
+		default:
+			rankSymbol = Integer.toString(this.getRank());
+			break;
+		}
+		
+		return this.getSuit() + rankSymbol;
+	}
 }

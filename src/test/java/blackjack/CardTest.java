@@ -41,10 +41,12 @@ public class CardTest extends TestCase {
 		Card c2 = new Card(Rank.QUEEN, Suit.HEARTS);
 		Card c3 = new Card(Rank.JACK, Suit.DIAMONDS);
 		Card c4 = new Card(Rank.ACE, Suit.CLUBS);
+		Card c5 = new Card(Rank.TWO, Suit.SPADES);
 		
 		assertEquals("SK", c1.toString());
 		assertEquals("HQ", c2.toString());
 		assertEquals("DJ", c3.toString());
 		assertEquals("CA", c4.toString());
+		assertEquals("S2", c5.toString());
 	}
 }
