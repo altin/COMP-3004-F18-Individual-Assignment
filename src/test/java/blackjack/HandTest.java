@@ -13,7 +13,7 @@ public class HandTest extends TestCase {
 		d1.createDeck();
 
 		Hand h1 = new Hand();
-		h1.drawCard();
+		h1.drawCard(d1);
 
 		assertEquals("SK", h1.toString());
 	}
