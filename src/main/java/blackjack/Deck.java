@@ -44,6 +44,10 @@ public class Deck {
 	public Card getCardAtIndex(int i) {
 		return this.deck.get(i);
 	}
+	
+	public Card deal() {
+		return this.deck.remove(deck.size() - 1);
+	}
 
 	public boolean equals(Deck deck2) {
 		if (this.deck.size() != deck2.getDeckSize())

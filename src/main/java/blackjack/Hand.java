@@ -8,4 +8,18 @@ public class Hand {
 	public Hand() {
 		this.cards = new ArrayList<Card>();
 	}
+	
+	public void drawCard(Deck deck) {
+		this.cards.add(deck.deal());
+	}
+	
+	@Override
+	public String toString() {
+		String cardsString = "";
+		// add counter for each hand
+		for (Card aCard : this.cards) {
+			cardsString += aCard.toString();
+		}
+		return cardsString;
+	}
 }
