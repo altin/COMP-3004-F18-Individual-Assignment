@@ -8,5 +8,6 @@ public class CardTest extends TestCase {
 	
 	public void testConstructor() {
 		Card c1  = new Card(Rank.ACE, Suit.CLUBS);
+		assertNotNull(c1);
 	}
 }
