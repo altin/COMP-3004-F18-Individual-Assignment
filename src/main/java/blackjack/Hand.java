@@ -13,6 +13,11 @@ public class Hand {
 		this.cards.add(deck.deal());
 	}
 	
+	public void drawHand(Deck deck) {
+		this.drawCard(deck);
+		this.drawCard(deck);
+	}
+	
 	@Override
 	public String toString() {
 		String cardsString = "";
