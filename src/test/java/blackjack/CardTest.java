@@ -11,7 +11,7 @@ public class CardTest extends TestCase {
 		assertNotNull(c1);
 	}
 	
-	public void testRankValueGetter() {
+	public void testGetRank() {
 		Card c1 = new Card(Rank.ACE, Suit.DIAMONDS);
 		assertEquals(c1.getRank(), 1);
 		
@@ -22,7 +22,7 @@ public class CardTest extends TestCase {
 		assertEquals(c3.getRank(), 10);	
 	}
 	
-	public void testSuitValueGetter() {
+	public void testGetSuit() {
 		Card c1 = new Card(Rank.ACE, Suit.DIAMONDS);
 		assertEquals(c1.getSuit(), "D");
 		
