@@ -45,4 +45,8 @@ public class Card {
 	public String getSuit() {
 		return this.suit.getSymbol();
 	}
+	
+	public String getRankString() {
+		return this.rank.name();
+	}
 }
