@@ -45,6 +45,6 @@ public class CardTest extends TestCase {
 		assertEquals("SK", c1.toString());
 		assertEquals("HQ", c2.toString());
 		assertEquals("DJ", c3.toString());
-		assertEquals("HC", c4.toString());
+		assertEquals("CA", c4.toString());
 	}
 }

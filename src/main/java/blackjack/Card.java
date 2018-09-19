@@ -48,4 +48,5 @@ public class Card {
 	public String getRankString() {
 		return this.rank.name();
 	}
+	
 }
