@@ -16,4 +16,12 @@ public class Player {
 		this.hands = new ArrayList<Hand>();
 		this.standingHands = new ArrayList<Hand>();
 	}
+	
+	public Hand getCurrentHand() {
+		return this.hands.get(getNumActiveHands() - 1);
+	}
+	
+	public int getNumActiveHands() {
+		return this.hands.size();
+	}
 }
