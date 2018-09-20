@@ -20,6 +20,12 @@ public class CardTest extends TestCase {
 
 		Card c3 = new Card(Rank.JACK, Suit.DIAMONDS);
 		assertEquals(c3.getRank(), 10);
+		
+		Card c4 = new Card(Rank.QUEEN, Suit.DIAMONDS);
+		assertEquals(c4.getRank(), 10);
+		
+		Card c5 = new Card(Rank.KING, Suit.DIAMONDS);
+		assertEquals(c5.getRank(), 10);
 	}
 
 	public void testGetSuit() {
