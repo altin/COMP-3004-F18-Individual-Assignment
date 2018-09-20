@@ -1,7 +1,5 @@
 package blackjack;
 
-import java.util.ArrayList;
-
 import blackjack.Card.Rank;
 import blackjack.Card.Suit;
 import junit.framework.TestCase;
@@ -14,18 +12,17 @@ public class PlayerTest extends TestCase {
 	}
 	
 	public void testCanHit() {
-		ArrayList<Card> hand = new ArrayList<Card>();
+		Hand hand = new Hand();
 		
 		Player p1 = new Player();
 		Deck d1 = new Deck();
 		d1.createDeck();
 		
-		Card c1 = new Card(Rank.ACE, Suit.CLUBS);
+		Card c1 = new Card(Rank.QUEEN, Suit.SPADES);
+		Card c2 = new Card(Rank.KING, Suit.SPADES);
 		
 		p1.hit(d1);
-		hand = p1.getHand();
-		
-		assertEquals(c1.toString(), hand.get(0));
-		
+		hand = p1.getCurrentHand();
+		assertEquals(c1.toString(), hand.getLastCard());
 	}
 }

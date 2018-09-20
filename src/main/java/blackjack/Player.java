@@ -17,11 +17,55 @@ public class Player {
 		this.standingHands = new ArrayList<Hand>();
 	}
 	
+	public String getName() {
+		return this.name;
+	}
+	
 	public Hand getCurrentHand() {
 		return this.hands.get(getNumActiveHands() - 1);
 	}
 	
 	public int getNumActiveHands() {
 		return this.hands.size();
+	}
+	
+	public void setState(State state) {
+		this.state = state;
+	}
+	
+	public Hand putDownHand() {
+		return this.hands.remove(getNumActiveHands() - 1);
+	}
+	
+	public void hit(Deck deck) {
+		if (hands.size() == 0) {
+			this.hands.add(new Hand());
+			this.getCurrentHand().drawHand(deck);
+			System.out.println(this.getName() + "'s Hand: " + this.getCurrentHand().toString() + "");
+			this.setState(this.checkHands());
+		} else {
+			this.getCurrentHand().drawCard(deck);
+			System.out.println("\n" + this.getName() + " Hits: " + this.getCurrentHand().getLastCard());
+			System.out.println(this.getName() + "'s Hand: " + this.getCurrentHand().toString() + "");
+			this.setState(this.checkHands());
+		}
+	}
+	
+	public State checkHands() {
+		if (this.hands.size() == 1) {
+			if (this.getCurrentHand().isBlackjack()) {
+				System.out.println(this.getName() + " has a BlackJack!\n");
+				this.standingHands.add(this.putDownHand());
+				return State.BLACKJACK;
+			}
+		}
+
+		if (this.getCurrentHand().isBust()) {
+			System.out.println(this.getName() + " busts!\n");
+			this.standingHands.add(this.putDownHand());
+			return State.BUST;
+		}
+
+		return State.NONE;
 	}
 }
