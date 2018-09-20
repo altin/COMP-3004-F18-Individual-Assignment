@@ -72,14 +72,16 @@ public class Hand {
 	public boolean isSoftSeventeen() {
 		return this.getScore() == 17 && this.getHandSize() == 2;
 	}
-	
+
+
 	@Override
 	public String toString() {
 		String cardsString = "";
-		// add counter for each hand
+
 		for (Card aCard : this.cards) {
-			cardsString += aCard.toString();
+			cardsString += aCard.toString() + " ";
 		}
-		return cardsString;
+
+		return cardsString + " (" + this.getScore() + ")";
 	}
 }

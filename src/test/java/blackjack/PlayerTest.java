@@ -19,10 +19,11 @@ public class PlayerTest extends TestCase {
 		d1.createDeck();
 		
 		Card c1 = new Card(Rank.QUEEN, Suit.SPADES);
-		Card c2 = new Card(Rank.KING, Suit.SPADES);
 		
 		p1.hit(d1);
 		hand = p1.getCurrentHand();
 		assertEquals(c1.toString(), hand.getLastCard());
 	}
+	
+	
 }

@@ -29,6 +29,10 @@ public class Player {
 		return this.hands.size();
 	}
 	
+	public State getState() {
+		return this.state;
+	}
+	
 	public void setState(State state) {
 		this.state = state;
 	}
@@ -49,6 +53,25 @@ public class Player {
 			System.out.println(this.getName() + "'s Hand: " + this.getCurrentHand().toString() + "");
 			this.setState(this.checkHands());
 		}
+	}
+	
+	public Hand evaluateHands() {
+		Hand bestHand = new Hand();
+		int currentScore = 0;
+		for (Hand hand : this.standingHands) {
+			if (hand.getScore() > currentScore) {
+				currentScore = hand.getScore();
+				bestHand = hand;
+			}
+		}
+		return bestHand;
+	}
+	
+	public void stand(Deck deck) {
+		System.out.println("\n" + this.getName() + " Stands.");
+		this.standingHands.add(this.putDownHand());
+
+		this.setState(State.STAND);
 	}
 	
 	public State checkHands() {
