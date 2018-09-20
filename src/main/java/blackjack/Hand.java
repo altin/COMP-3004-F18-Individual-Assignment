@@ -18,6 +18,25 @@ public class Hand {
 		this.drawCard(deck);
 	}
 	
+	public int getScore() {
+		int score = 0;
+		boolean ace = false;
+		
+		for (Card card : cards) {
+			int cardValue = card.getRank();
+			if (cardValue == 1) {
+				ace = true;
+			}
+			score = score + cardValue;
+		}
+		
+		if (ace == true && score + 10 <= 21) {
+			score = score + 10;
+		}
+
+		return score;
+	}
+	
 	@Override
 	public String toString() {
 		String cardsString = "";

@@ -20,14 +20,14 @@ public class HandTest extends TestCase {
 		assertEquals("SK", h1.toString());
 	}
 	
-	public void testAceWorthOneOrEleven {
+	public void testAceWorthOneOrEleven() {
 		Deck d1 = new Deck();
 		
 		d1.addCard(new Card(Rank.ACE, Suit.CLUBS));
 		d1.addCard(new Card(Rank.ACE, Suit.DIAMONDS));
 		
 		Hand h1 = new Hand();
-		h1.drawHand(deck);
+		h1.drawHand(d1);
 		
 		// Two aces = value of 12 (1 ace is 11, the other is 1)
 		assertEquals(12, h1.getScore());

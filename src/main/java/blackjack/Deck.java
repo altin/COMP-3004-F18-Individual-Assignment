@@ -17,6 +17,10 @@ public class Deck {
 			}
 		}
 	}
+	
+	public void addCard(Card card) {
+		this.deck.add(card);
+	}
 
 	public void shuffle() {
 		Random random = new Random();
